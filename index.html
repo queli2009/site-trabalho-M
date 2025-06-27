@@ -1,116 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <title>Heróis e aventura</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.google.com/specimen/Roboto+Condensed">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-
-   
+    <title>Universo Marvel - Heróis em Destaque</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <section class="principal container">
-        <div class="container__caixa">
-            <h1 class="container__titulo"> Ironheart</h1>
-           <img src="img/Todos os filmes da Marvel _ Marvel_files/disneyplus_lob_log_eye_01.png" alt="Todo sonho tem um custo.Dominique Thorne e Anthony Ramos vão aos bastidores da nova série da Marvel Televison, disonivel exlusivamente no Disney+" class="container__imagem">
-           <a href="https://www.marvel.com/articles/tv-shows/ironheart-preview-dominique-thorne-anthony-ramos" class="container__botao">Ler mais</a>
-             <a href="https://www.disneyplus.com/pt-br/browse/entity-b2b50b9a-a055-4b31-a609-8ec46f3add98?cid=DTCI-Synergy-Marvel-Site-Acquisition-Originals-US-Marvel-Ironheart-EN-Homepage-Marvel_Homepage_Ironheart-NA" class="container_botao botao_secundario">Assista agora</a>
+    <header>
+        <div class="logo">
+            <h1>Marvel Heroes</h1>
         </div>
-        <img src="img/Todos os filmes da Marvel _ Marvel_files/deadpool2_lob_crd_02.jpg" alt="
-Muito bom
-Deadpool & Wolverine Ryan Reynolds e Hugh Jackman brilham na estreia desta dupla dinâmica no Universo Cinematográfico Marvel por Katiúscia Vianna">
-    </section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Personagens</a></li>
+                <li><a href="#">Filmes & Séries</a></li>
+                <li><a href="#">Quadrinhos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="container__secundario">
-        <img src="img/mulogo_lob_log_eye_01_1.png" alt="Leia estes e mais de 30.000 quadrinhos digitais por US$ 9,99 por mês!">
-        <p class="Leia estes e mais de 30.000 quadrinhos digitais por US$ 9,99 por mês!"></p>
-        <div class="container__descricao">
-                 <a href="https://www.marvel.com/" class="container_botao">Obtnha o marvel unlimited</a>
-          
-        <img src="img/Banniere_Site_MS_Juillet2K22.png" alt="novidades no marvel unlimited" class="container__imagem">
-      </div>
-    </section>
-<section class="container secundario">
-        <img src="img/Notebook.png" alt="Notebook com páginas do curso HTML5 e CSS3 da Alura aberta"
-        class="secundario__imagem">
-        <div class="container__descricao">
-            <h2 class="descricao__titulo">Baixe seus cursos</h2>
-            <p class="descricao__texto">Baixe e assista quanda e onde quiser. Assim, seus favoritos estão sempre com 
-                você, até mesmo sem internet.</p>
+    <main>
+        <section class="hero-banner">
+            <h2>Bem-vindo ao Universo Marvel!</h2>
+            <p>Explore os maiores heróis e vilões de todos os tempos.</p>
+        </section>
 
-        </div>
-    </section>
-    <section class="dispositivos">
-        <h2 class="dispositivos__titulos">Disponivel nos seus dispositivos favoritos</h2>
-        <ul class="dispositivos__lista">
-         <li>
-            <img src="img/tv.png" alt="Ìcones de televisão">
-            <h3 class="Lista__item">TV</h3>
-         </li>
+        <section class="featured-heroes">
+            <h3>Nossos Heróis em Destaque</h3>
+            <div class="hero-cards">
+                <div class="hero-card">
+                    <img src="https://via.placeholder.com/200x250?text=Homem+de+Ferro" alt="Homem de Ferro">
+                    <h4>Homem de Ferro</h4>
+                    <p>Tony Stark, o gênio, bilionário, playboy, filantropo.</p>
+                    <button data-hero="ironman">Saber Mais</button>
+                </div>
 
-          <li>
-            <img src="img/logo marvel.png" alt="Sobre a Marvel Ajuda/Perguntas frequentes Carreiras Estágios">
-            <h3 class="Lista__item">Marvel</h3>
-         </li>
+                <div class="hero-card">
+                    <img src="https://via.placeholder.com/200x250?text=Capita+Marvel" alt="Capitã Marvel">
+                    <h4>Capitã Marvel</h4>
+                    <p>Carol Danvers, uma das heroínas mais poderosas do universo.</p>
+                    <button data-hero="captainmarvel">Saber Mais</button>
+                </div>
 
-         <li>
-            <img src="img/mulogo_lob_log_eye_01_1.png" alt="Marvel Unlimited Acesse mais de 30.000 quadrinhos digitais">
-            <link href="preconnect" href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer">
-            <h3 class="Lista__item">Celular</h3>
-         </li>
+                <div class="hero-card">
+                    <img src="https://via.placeholder.com/200x250?text=Homem+Aranha" alt="Homem-Aranha">
+                    <h4>Homem-Aranha</h4>
+                    <p>Peter Parker, o amigão da vizinhança com superpoderes.</p>
+                    <button data-hero="spiderman">Saber Mais</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-
-        </ul>
-    </section>
-    <footer class="rodape">
-        <img src="img/Logo.png" alt="Alura+" class="rodape__logo">
-        <ul class="rodape__lista">
-            <li class="lista__link">
-                <a href="#">Idioma</a>
-            </li>
-
-            <li class="lista__link">
-                <a href="#">Dispositivos compatíveis</a>
-
-            </li>
-            <li class="lista__link">
-                <a href="#">Contrato de assinaturas</a>
-            </li>
-             <li class="lista__link">
-                <a href="#">estagios</a>
-                <link href="https://www.marvel.com/corporate/interns">
-            </li>
-
-             <li class="lista__link">
-                <a href="#">Carreiras</a>
-                <link href="https://jobs.disneycareers.com/search-jobs?orgIds=391-1635-24091&ascf=[{%22key%22:%22custom_fields%252EIndustryCustomField%22,%22value%22:%22Marvel%20Entertainment%22}]">
-            </li>
-
-             <li class="lista__link">
-                <a href="#">Sobre a marvel</a>
-                <link href="https://www.marvel.com/corporate/about">
-            </li>
-
-             <li class="lista__link">
-                <link href="preconnect" href="https://help.marvel.com/hc/en-br">
-                <a href="#">Ajuda</a>
-            </li>
-        </ul>
-        <p class="rodape__texto">2021 Alura, Alura+ e Alura Lingua. Todos os direitor reservados. Serviço de 
-          assinatura paga. Conteúdo sujeito a disponibilidade.</p>
-          <p class="rodape__texto"> Cultura e Estilo de Vida'Marvel: A Arte de Stormbreakers' apresenta os artistas de quadrinhos favoritos dos fãs</p>
-          <p class="rodape__texto">O artista superstar Lee Bermejo dá vida à história do Homem-Aranha em novas capas variantes de Amazing Visions, parte da contagem regressiva para 'Amazing Spider-Man' #1000</p>
-          <p class="rodape__texto">Cultura e Estilo de Vida
-'Marvel Studios: Cross-Sections' revela segredos ocultos do universo cinematográfico da Marvel</p>
-          
-   
+    <footer>
+        <p> 2025 Universo Marvel. Todos os direitos reservados. (Site fictício)</p>
     </footer>
-
-    
-</body>
-</html>
