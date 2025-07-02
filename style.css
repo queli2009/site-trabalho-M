@@ -7,6 +7,7 @@
     --light-gray: #f4f4f4;
     --text-color: #333;
     --white: #ffffff;
+    --fundo:#333;
 }
 
 body {
@@ -61,9 +62,10 @@ nav ul li a:hover {
 }
 
 .hero-banner {
-    background-image: url('https://via.placeholder.com/1500x400?text=Universo+Marvel'); /* Imagem de fundo */
+    background-image: url('img/hq720.jpg'); /* Imagem de fundo */
     background-size: cover;
     background-position: center;
+    color: var(--fundo);
     color: var(--white);
     text-align: center;
     padding: 80px 20px;
