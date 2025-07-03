@@ -1,13 +1,28 @@
-/* Estilos Gerais */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a; /* Fundo escuro */
-    color: #f0f0f0; /* Texto claro */
-    line-height: 1.6;
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap');
+
+/* Variáveis de Cores da Marvel */
+:root {
+    --marvel-red: #e62429;
+    --dark-bg: #0d0d0d;
+    --dark-gray-header-footer: #151515;
+    --dark-gray-card: #1f1f1f;
+    --light-text: #e0e0e0;
+    --gold-accent: #ffcc00; /* Um dourado para contraste */
 }
 
+/* Estilos Gerais do Corpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* Contêiner de Centralização */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -15,11 +30,15 @@ body {
     padding: 20px 0;
 }
 
-/* Cabeçalho */
+/* Cabeçalho Principal */
 .main-header {
-    background-color: #222;
-    padding: 15px 0;
-    border-bottom: 3px solid #e62429; /* Borda vermelha da Marvel */
+    background-color: var(--dark-gray-header-footer);
+    padding: 18px 0;
+    border-bottom: 4px solid var(--marvel-red);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky; /* Fica fixo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
 .main-header .container {
@@ -29,14 +48,15 @@ body {
 }
 
 .logo {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #e62429; /* Vermelho Marvel */
-    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8em;
+    color: var(--marvel-red);
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    margin: 0;
 }
 
+/* Navegação Principal */
 .main-nav ul {
     list-style: none;
     margin: 0;
@@ -49,62 +69,206 @@ body {
 }
 
 .main-nav ul li a {
-    color: #f0f0f0;
+    color: var(--light-text);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    position: relative; /* Para o efeito de sublinhado */
     transition: color 0.3s ease;
+    padding-bottom: 5px; /* Espaço para o sublinhado */
+}
+
+.main-nav ul li a::after { /* Efeito de sublinhado animado */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--marvel-red);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
 }
 
 .main-nav ul li a:hover {
-    color: #e62429;
+    color: var(--marvel-red);
 }
 
-/* Seção Hero */
-.hero {
-    background: url('https://via.placeholder.com/1500x500?text=Universo+Marvel') no-repeat center center/cover;
+/* Menu Hambúrguer (Mobile) */
+.hamburger-menu {
+    display: none; /* Escondido por padrão em desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--light-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu de Navegação para Mobile */
+.main-nav.active {
+    display: flex; /* Mostra o menu quando ativo */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-gray-header-footer);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    padding: 20px 0;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.main-nav.active ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main-nav.active ul li {
+    margin: 10px 0;
+    width: 100%;
     text-align: center;
-    padding: 100px 20px;
+}
+
+.main-nav.active ul li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Animação para menu mobile */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Seção Hero (Banner Principal) */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1542204648-fb205e4d2719?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 160px 20px;
+    text-align: center;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
+}
+
+.hero::before { /* Camada de sobreposição para legibilidade do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
-    font-size: 3.5em;
-    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5em; /* Título maior */
+    margin-bottom: 20px;
+    color: var(--gold-accent); /* Dourado */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    font-weight: 300; /* Texto mais leve */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-explore {
-    background-color: #e62429;
+    background-color: var(--marvel-red);
     color: #fff;
-    padding: 15px 30px;
+    padding: 18px 40px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 36, 41, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-explore:hover {
-    background-color: #cc1e23;
+    background-color: #cc1e23; /* Vermelho um pouco mais escuro */
+    transform: translateY(-3px); /* Leve elevação */
+    box-shadow: 0 8px 20px rgba(230, 36, 41, 0.6);
 }
 
-/* Seção de Destaques */
-.featured-content {
-    padding: 50px 0;
+/* Seções de Conteúdo (Personagens, Filmes, etc.) */
+.featured-content, .section-placeholder {
+    padding: 70px 0;
     text-align: center;
 }
 
-.featured-content h3 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #e62429;
+.featured-content h3, .section-placeholder h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: var(--marvel-red);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
+.section-placeholder {
+    background-color: var(--dark-gray-card);
+    margin-top: 40px;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.section-placeholder p {
+    font-size: 1.1em;
+    color: #b0b0b0;
+}
+
+/* Grid de Cards */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -113,68 +277,123 @@ body {
 }
 
 .card {
-    background-color: #2a2a2a;
-    border-radius: 8px;
+    background-color: var(--dark-gray-card);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    border: 1px solid rgba(230, 36, 41, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    border-color: var(--marvel-red);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     display: block;
+    filter: brightness(0.9) contrast(1.1); /* Ajuste sutil na imagem */
+    transition: filter 0.3s ease;
+}
+
+.card:hover img {
+    filter: brightness(1) contrast(1); /* Imagem mais clara no hover */
+}
+
+.card div { /* Ajuste o padding interno do card */
+    padding: 20px;
 }
 
 .card h4 {
-    font-size: 1.5em;
-    margin: 15px 0 10px;
-    color: #f0f0f0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8em;
+    color: var(--gold-accent);
+    margin: 10px 0 10px;
+    text-transform: uppercase;
 }
 
 .card p {
-    font-size: 0.9em;
-    color: #bbb;
-    padding: 0 15px 15px;
+    font-size: 1em;
+    color: #b0b0b0;
 }
 
-/* Rodapé */
+/* Rodapé Principal */
 .main-footer {
-    background-color: #222;
-    color: #aaa;
+    background-color: var(--dark-gray-header-footer);
+    color: #909090;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-    border-top: 3px solid #e62429;
+    padding: 30px 0;
+    margin-top: 80px;
+    border-top: 4px solid var(--marvel-red);
+    font-size: 0.9em;
 }
 
-/* Responsividade Básica */
+.social-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--marvel-red);
+}
+
+
+/* Responsividade para Telas Menores (Mobile) */
 @media (max-width: 768px) {
     .main-header .container {
-        flex-direction: column;
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+        justify-content: center; /* Centraliza itens */
     }
 
-    .main-nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
     }
 
-    .main-nav ul li {
-        margin: 0 10px 10px;
+    .main-nav {
+        display: none; /* Esconde a navegação em mobile por padrão */
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostra o botão hambúrguer */
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    .hero {
+        padding: 100px 20px;
     }
 
     .hero h2 {
-        font-size: 2.5em;
+        font-size: 3em;
     }
 
     .hero p {
+        font-size: 1.1em;
+    }
+
+    .btn-explore {
+        padding: 15px 30px;
         font-size: 1em;
+    }
+
+    .featured-content h3, .section-placeholder h3 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
     }
 }

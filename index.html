@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marvel Universe - Seu Portal</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -12,12 +13,17 @@
             <h1 class="logo">Marvel</h1>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Personagens</a></li>
-                    <li><a href="#">Filmes</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Quadrinhos</a></li>
+                    <li><a href="#personagens">Personagens</a></li>
+                    <li><a href="#filmes">Filmes</a></li>
+                    <li><a href="#series">Séries</a></li>
+                    <li><a href="#quadrinhos">Quadrinhos</a></li>
                 </ul>
             </nav>
+            <button class="hamburger-menu" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -25,31 +31,52 @@
         <section class="hero">
             <div class="container">
                 <h2>Explore o Universo Marvel</h2>
-                <p>Descubra heróis, vilões e as histórias que moldaram o mundo.</p>
+                <p>Descubra heróis, vilões e as histórias épicas que moldaram o mundo.</p>
                 <button class="btn-explore">Começar a Explorar</button>
             </div>
         </section>
 
-        <section class="featured-content">
+        <section class="featured-content" id="personagens">
             <div class="container">
-                <h3>Destaques</h3>
+                <h3>Personagens em Destaque</h3>
                 <div class="card-grid">
                     <div class="card">
-                        <img src="img/deadpoolandwolverine_lob_crd_03.jpg" alt="Deadpool">
-                        <h4>Deadpool</h4>
-                        <p>O gênio, bilionário, playboy, filantropo.</p>
+                        <img src="https://images.unsplash.com/photo-1627856004900-47b29a28e37e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Homem de Ferro">
+                        <h4>Homem de Ferro</h4>
+                        <p>O gênio, bilionário, playboy, filantropo. Tony Stark é o coração dos Vingadores.</p>
                     </div>
                     <div class="card">
-                        <img src="img/themarvels_lob_crd_05.jpg" alt="Capitã Marvel">
+                        <img src="https://images.unsplash.com/photo-1606555173322-29e2f9d2a6a1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Capitã Marvel">
                         <h4>Capitã Marvel</h4>
-                        <p>A mais poderosa heroína do universo.</p>
+                        <p>Carol Danvers, uma das heroínas mais poderosas do universo Marvel.</p>
                     </div>
                     <div class="card">
-                        <img src="img/thefantasticfourfirststeps_lob_crd_03.jpg" alt="Vingadores">
-                        <h4>Vingadores</h4>
-                        <p>Os heróis mais poderosos da Terra.</p>
+                        <img src="https://images.unsplash.com/photo-1613142751249-e4a938c772e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pantera Negra">
+                        <h4>Pantera Negra</h4>
+                        <p>T'Challa, o rei de Wakanda e protetor de seu povo.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section-placeholder" id="filmes">
+            <div class="container">
+                <h3>Filmes Épicos</h3>
+                <p>Em breve, mais detalhes sobre os filmes do Universo Cinematográfico Marvel!</p>
+            </div>
+        </section>
+
+        <section class="section-placeholder" id="series">
+            <div class="container">
+                <h3>Séries Incríveis</h3>
+                <p>Fique ligado para as últimas séries da Marvel!</p>
+            </div>
+        </section>
+
+        <section class="section-placeholder" id="quadrinhos">
+            <div class="container">
+                <h3>Quadrinhos Lendários</h3>
+                <p>Descubra as origens e novas aventuras nos quadrinhos!</p>
             </div>
         </section>
     </main>
@@ -57,7 +84,14 @@
     <footer class="main-footer">
         <div class="container">
             <p> 2025 Marvel Universe Fan Site. Todos os direitos reservados à Marvel.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="https://via.placeholder.com/24/fff/000?text=FB" alt="Facebook"></a>
+                <a href="#" aria-label="Twitter"><img src="https://via.placeholder.com/24/fff/000?text=TW" alt="Twitter"></a>
+                <a href="#" aria-label="Instagram"><img src="https://via.placeholder.com/24/fff/000?text=IG" alt="Instagram"></a>
+            </div>
         </div>
     </footer>
 
-    
+    <script src="script.js"></script>
+</body>
+</html>
