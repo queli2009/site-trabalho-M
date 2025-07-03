@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo Marvel - Heróis em Destaque</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Marvel Universe - Seu Portal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <img src="img/logo marvel.png">
-            <h1>Marvel Heróis</h1>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">Marvel</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Personagens</a></li>
+                    <li><a href="#">Filmes</a></li>
+                    <li><a href="#">Séries</a></li>
+                    <li><a href="#">Quadrinhos</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Personagens</a></li>
-                <li><a href="#">Filmes & Séries</a></li>
-                <li><a href="#">Quadrinhos</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section class="hero-banner">
-            <img src="img/logo marvel.png">
-            <h2>Bem-vindo ao Universo Marvel!</h2>
-            <p>Explore os maiores heróis e vilões de todos os tempos.</p>
+        <section class="hero">
+            <div class="container">
+                <h2>Explore o Universo Marvel</h2>
+                <p>Descubra heróis, vilões e as histórias que moldaram o mundo.</p>
+                <button class="btn-explore">Começar a Explorar</button>
+            </div>
         </section>
 
-        <section class="featured-heroes">
-            <h3>Nossos Heróis em Destaque</h3>
-         
-            <div class="hero-card">
-    <img src="img/deadpoolandwolverine_lob_crd_03.jpg" alt="Deadpool">
-    <h4>Deadpool</h4>
-    <p>Ryan Reynolds Ator canadense, mercenário com câncer terminal.</p>
-    <a href="https://www.omelete.com.br/marvel-cinema/deadpool-e-wolverine-descricao-30-minutos" class="hero-button" ></a>
-</div>
-
-                <div class="hero-card">
-                    <img src="img/themarvels_lob_crd_05.jpg" alt="Capitã Marvel">
-                    <h4>Capitã Marvel</h4>
-                    <p>Carol Danvers, uma das heroínas mais poderosas do universo.</p>
-                    <button data-hero="captainmarvel">Saber Mais</button>
-                </div>
-                <div class="hero-card">
-                    <img src="img/big-poster-filme-homem-aranha-sem-volta-para-casa-90x60-cm-1-poster-geek.jpg"
-                        alt="Homem-Aranha">
-                    <h4>Homem-Aranha</h4>
-                    <p>Peter Parker, o amigão da vizinhança com superpoderes.</p>
-                    <button data-hero="spiderman">Saber Mais</button>
+        <section class="featured-content">
+            <div class="container">
+                <h3>Destaques</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Homem+de+Ferro" alt="Homem de Ferro">
+                        <h4>Homem de Ferro</h4>
+                        <p>O gênio, bilionário, playboy, filantropo.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Capita+Marvel" alt="Capitã Marvel">
+                        <h4>Capitã Marvel</h4>
+                        <p>A mais poderosa heroína do universo.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Vingadores" alt="Vingadores">
+                        <h4>Vingadores</h4>
+                        <p>Os heróis mais poderosos da Terra.</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <h1>Artigos Interessantes</h1>
-        <p>Confira este artigo sobre a Capitã Marvel:</p>
-
-        <a
-            href="https://www.omelete.com.br/marvel-comics/capita-marvel-a-origem-o-passado-polemico-e-o-renascimento-da-heroina">Leia
-            mais sobre a Capitã Marvel no Omelete</a>
-
-        <p>Este link irá levar você para uma página externa quando clicado.</p>
     </main>
 
-    <footer>
-        <p> 2025 Universo Marvel. Todos os direitos reservados. (Site fictício)</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Marvel Universe Fan Site. Todos os direitos reservados à Marvel.</p>
+        </div>
     </footer>
+
+    
