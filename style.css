@@ -137,7 +137,6 @@ nav ul li a:hover {
     margin-bottom: 20px;
     min-height: 50px; /* Para manter a altura consistente */
 }
-
 .hero-card button {
     background-color: var(--marvel-red);
     color: var(--white);
@@ -148,11 +147,19 @@ nav ul li a:hover {
     font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.1s ease;
+    .hero-card a.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336; /* Cor inicial */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: all 0.3s ease; /* Suaviza a transição */
 }
 
-.hero-card button:hover {
-    background-color: #a00d11; /* Um vermelho um pouco mais escuro */
-    transform: translateY(-2px);
+.hero-card a.hero-button:hover {
+    background-color: #a00d11; /* Um vermelho mais escuro */
+    transform: translateY(-2px); /* Efeito de "elevação" */
 }
 
 footer {
@@ -197,4 +204,5 @@ footer {
     .hero-card {
         width: 80%; /* Ajusta a largura para telas menores */
     }
+}
 }
