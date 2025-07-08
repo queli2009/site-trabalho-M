@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for internal links
+    // Smooth scroll for internal navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const exploreButton = document.querySelector('.btn-explore');
     if (exploreButton) {
         exploreButton.addEventListener('click', () => {
-            // Scroll to the "Personagens em Destaque" section
             const featuredCharactersSection = document.getElementById('personagens');
             if (featuredCharactersSection) {
                 featuredCharactersSection.scrollIntoView({
@@ -24,7 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hamburger menu functionality (optional, but good to include if you have a hamburger menu)
+    // Functionality for character cards
+    const characterCards = document.querySelectorAll('.card');
+    characterCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const characterName = card.querySelector('h4').textContent;
+            const characterDescription = card.querySelector('p').textContent;
+
+            // Display character information in an alert
+            alert(`Você clicou em ${characterName}!\n\nDetalhes: ${characterDescription}`);
+            
+            // You could also imagine more complex interactions here, like:
+            // - Opening a modal with more detailed information
+            // - Navigating to a dedicated character page
+            // - Highlighting the clicked card
+        });
+    });
+
+    // Hamburger menu functionality (for mobile navigation)
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mainNav = document.querySelector('.main-nav');
 
