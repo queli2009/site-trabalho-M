@@ -1,46 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for internal navigation links
+    // Smooth scroll for all internal navigation links (e.g., #personagens, #filmes)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default jump behavior
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth' // Smooth scroll animation
             });
         });
     });
 
     // Functionality for the "Começar a Explorar" button
     const exploreButton = document.querySelector('.btn-explore');
-    if (exploreButton) {
+    if (exploreButton) { // Check if the button exists before adding an event listener
         exploreButton.addEventListener('click', () => {
             const featuredCharactersSection = document.getElementById('personagens');
-            if (featuredCharactersSection) {
+            if (featuredCharactersSection) { // Ensure the target section exists
                 featuredCharactersSection.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth' // Smooth scroll to characters section
                 });
             }
         });
     }
 
-    // Functionality for character cards
+    // --- NEW / MODIFIED FUNCTIONALITY FOR CHARACTER CARDS ---
+    // Define character URLs
+    const characterUrls = {
+        "Deadpool": "https://www.marvel.com/characters/deadpool",
+        "Capitã Marvel": "https://www.marvel.com/characters/captain-marvel-carol-danvers",
+        "Pantera Negra": "https://www.marvel.com/characters/black-panther-t-challa"
+    };
+
     const characterCards = document.querySelectorAll('.card');
     characterCards.forEach(card => {
+        card.style.cursor = 'pointer'; // Add a pointer cursor to indicate clickability
         card.addEventListener('click', () => {
-            const characterName = card.querySelector('h4').textContent;
-            const characterDescription = card.querySelector('p').textContent;
+            const characterName = card.querySelector('h4').textContent; // Get the character name
 
-            // Display character information in an alert
-            alert(`Você clicou em ${characterName}!\n\nDetalhes: ${characterDescription}`);
-            
-            // You could also imagine more complex interactions here, like:
-            // - Opening a modal with more detailed information
-            // - Navigating to a dedicated character page
-            // - Highlighting the clicked card
+            // Check if the character name exists in our defined URLs
+            if (characterUrls[characterName]) {
+                window.open(characterUrls[characterName], '_blank'); // Open URL in a new tab
+            } else {
+                // Fallback or alert if a URL isn't defined for a character
+                alert(`Desculpe, não há um link direto para ${characterName} ainda.`);
+            }
         });
     });
 
-    // Hamburger menu functionality (for mobile navigation)
+    // Hamburger menu functionality for responsive navigation
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mainNav = document.querySelector('.main-nav');
 
